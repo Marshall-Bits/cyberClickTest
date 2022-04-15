@@ -1,10 +1,15 @@
 // get DOM elements
 const multipleButton = document.querySelector("#multiples");
+const multipleDeleteButton = document.querySelector("#multiples-delete");
 const multipleList = document.querySelector(".multiple-list")
 
 
 function addToList(element){
     multipleList.appendChild(document.createElement("li")).innerText=element;
+}
+
+function deleteMultiples(){
+    multipleList.innerText="";
 }
 
 function findMultiples(){
@@ -26,4 +31,5 @@ function findMultiples(){
 }
 
 multipleButton.addEventListener("click", findMultiples)
+multipleDeleteButton.addEventListener("click", deleteMultiples)
 

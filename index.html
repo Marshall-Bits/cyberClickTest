@@ -7,28 +7,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script async src="./exerciceOne.js"></script>
     <script async src="./exerciceTwo.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
     <title>Cyberclick exercices</title>
 </head>
 
 <body>
-    <button id="multiples">Find multiples</button>
-    <ul class="multiple-list">
-    </ul>
+    <section class="exercice-one">
+        <h1>Exercicio 1</h1>
+        <div class="buttons">
+            <button id="multiples">Encontrar múltiples</button>
+            <button id="multiples-delete">Borrar múltiples</button>
+        </div>
+        <div class="console">
+            <ul class="multiple-list">
+            </ul>
+        </div>
+    </section>
     <section class="exercice-two">
-        <input type="file" name="inputs" id="inputs" />
-        <section>
-            <h2 class="valid-passwords">
-            </h2>
-            <h1>log first part exercice 2:</h1>
-            <ul class="first-log">
-            </ul>
-        </section>
-        <section>
-            <h1>log second part exercice 2:</h1>
-            <ul class="second-log">
-            </ul>
-        </section>
+        <h2>Ejercicio 2</h2>
+        <div class="input-container">
+            <p>Carga el archivo inputs.txt aquí:</p>
+            <input type="file" name="inputs" id="inputs" />
+        </div>
+        <div class="consoles-container">
+            <section>
+                <h2 class="valid-passwords">
+                </h2>
+                <h1>log first part exercice 2:</h1>
+                <div class="console">
+                    <ul class="first-log">
+                    </ul>
+                </div>
+            </section>
+            <section>
+                <h1>log second part exercice 2:</h1>
+                <div class="console">
+                    <ul class="second-log">
+                    </ul>
+                </div>
+            </section>
+        </div>
 
     </section>
 

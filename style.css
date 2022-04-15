@@ -1,4 +1,62 @@
+/* *{
+    padding: 0;
+    margin: 0;
+} */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.exercice-one{
+    margin-bottom: 5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .exercice-two{
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    margin-bottom: 5vh;
+}
+
+.consoles-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+}
+
+li {
+    list-style-type:disc;
+}
+
+.input-container{
+    background-color: aquamarine;
+    padding: 1vw;
+    border-radius: 5px;
+}
+
+.console{
+    background-color: black;
+    font-family: 'Courier New', Courier, monospace;
+    height: 40vh;
+    width: 30vw;
+    overflow-y: scroll;
+    color: aquamarine;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    width: 10vw;
+    border-radius: 3px;
+    background-color:aquamarine;
+    margin: 5px;
 }

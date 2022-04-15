@@ -1,9 +1,15 @@
 const firstLog = document.querySelector(".first-log");
+const secondLog = document.querySelector(".second-log");
 
-let validPasswords = 0;
+let validPasswordsFirst = 0;
+let validPasswordsSecond = 0;
 
 function addToFirstLog(element) {
     firstLog.appendChild(document.createElement("li")).innerText = element;
+}
+
+function addToSecondLog(element) {
+    secondLog.appendChild(document.createElement("li")).innerText = element;
 }
 
 function checkValidPasswordFirstPart(minimumTimes, maximumTimes, letter, password) {
@@ -13,8 +19,8 @@ function checkValidPasswordFirstPart(minimumTimes, maximumTimes, letter, passwor
     }
     if (coincidences > minimumTimes && coincidences < maximumTimes) {
         addToFirstLog(`The password ${password} is correct. It has more than ${minimumTimes} "${letter}" and less than ${maximumTimes} `)
-        validPasswords++;
-        document.querySelector(".valid-passwords").innerText = `There is ${validPasswords} valid passwords in total.`;
+        validPasswordsFirst++;
+        document.querySelector(".valid-passwords").innerText = `There is ${validPasswordsFirst} valid passwords in total.`;
     }
     else{
         addToFirstLog(`The password ${password} is not correct.`)
@@ -22,11 +28,17 @@ function checkValidPasswordFirstPart(minimumTimes, maximumTimes, letter, passwor
 }
 
 function checkValidPasswordSecondPart(firstIndex, secondIndex, letter, password){
-    if(password[firstIndex-1] === letter){
-        console.log("correct password", password, firstIndex, letter);
+    if(password[firstIndex-1] === letter && password[secondIndex-1] === letter){
+        addToSecondLog(`The password ${password} is correct. It has on position ${firstIndex} the letter "${letter}" and also on position ${secondIndex}`);
+    }
+    else if(password[firstIndex-1] === letter){
+        addToSecondLog(`The password ${password} is correct. It has on position ${firstIndex} the letter "${letter}"`);
     }
     else if(password[secondIndex-1] === letter){
-        console.log("second index correct");
+        addToSecondLog(`The password ${password} is correct. It has on position ${secondIndex} the letter "${letter}"`);
+    }
+    else{
+        addToSecondLog(`The password ${password} is not correct.`)
     }
 
 }
