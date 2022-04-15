@@ -21,6 +21,16 @@ function checkValidPasswordFirstPart(minimumTimes, maximumTimes, letter, passwor
     }
 }
 
+function checkValidPasswordSecondPart(firstIndex, secondIndex, letter, password){
+    if(password[firstIndex-1] === letter){
+        console.log("correct password", password, firstIndex, letter);
+    }
+    else if(password[secondIndex-1] === letter){
+        console.log("second index correct");
+    }
+
+}
+
 
 // On the input we upload the txt file with all the passwords and conditions, that triggers the first function
 document.getElementById('inputs').onchange = function () {
@@ -36,6 +46,7 @@ document.getElementById('inputs').onchange = function () {
             const splitedElement = element.replace("-", " ").replace(":", "").split(" ")
             // now we have an array with array[0] = first number, array[1] = second number, array[2] = letter and array[3]= password
             checkValidPasswordFirstPart(splitedElement[0], splitedElement[1], splitedElement[2], splitedElement[3])
+            checkValidPasswordSecondPart(splitedElement[0], splitedElement[1], splitedElement[2], splitedElement[3])
             
         });
     };

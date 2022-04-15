@@ -1,0 +1,4 @@
+.exercice-two{
+    display: flex;
+    justify-content: space-evenly;
+}
