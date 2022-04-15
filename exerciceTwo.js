@@ -1,7 +1,16 @@
 let fileLinesArray;
+let validPasswords = 0;
 
 function checkValidPassword(minimumTimes,maximumTimes,letter,password){
-    
+    let coincidences = 0;
+    for(let i=0;i < password.length; i++){
+        if(password[i] === letter) coincidences+=1
+    }
+    if(coincidences>minimumTimes && coincidences<maximumTimes){
+        console.log(`The password ${password} is correct. It has more than ${minimumTimes} "${letter}" and less than ${maximumTimes} `)
+        validPasswords ++;
+    }
+    console.log(`There is ${validPasswords} valid passwords in total.`)
 }
 
 // On the input we upload the txt file with all the passwords and conditions
@@ -19,6 +28,7 @@ document.getElementById('inputs').onchange = function(){
             const splitedElement = element.replace("-"," ").replace(":","").split(" ")
             // now we have an array with array[0] = first number, array[1] = second number, array[2] = letter and array[3]= password
             console.log(splitedElement)
+            checkValidPassword(splitedElement[0],splitedElement[1],splitedElement[2],splitedElement[3])
         });
     };
     reader.readAsText(file);
