@@ -21,7 +21,7 @@ function findMultiples(){
             addToList("cyber");
         }
         else if(i%5===0){
-            addToList("cyber");
+            addToList("click");
         }
         else {
             addToList(i)
