@@ -1,7 +1,7 @@
-/* *{
+*{
     padding: 0;
     margin: 0;
-} */
+}
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -33,16 +33,19 @@ body {
 }
 
 li {
-    list-style-type:disc;
+    list-style-type:none;
+    margin-bottom: 15px;
 }
 
 .input-container{
     background-color: aquamarine;
     padding: 1vw;
     border-radius: 5px;
+    margin: 50px;
 }
 
 .console{
+    padding: 20px;
     background-color: black;
     font-family: 'Courier New', Courier, monospace;
     height: 40vh;

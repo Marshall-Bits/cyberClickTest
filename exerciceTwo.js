@@ -12,6 +12,10 @@ function addToSecondLog(element) {
     secondLog.appendChild(document.createElement("li")).innerText = element;
 }
 
+function printValidPasswords(exercice, passwords){
+    document.querySelector(`.valid-passwords-${exercice}`).innerText = `There is ${passwords} valid passwords in total.`;
+}
+
 function checkValidPasswordFirstPart(minimumTimes, maximumTimes, letter, password) {
     let coincidences = 0;
     for (let i = 0; i < password.length; i++) {
@@ -20,7 +24,7 @@ function checkValidPasswordFirstPart(minimumTimes, maximumTimes, letter, passwor
     if (coincidences > minimumTimes && coincidences < maximumTimes) {
         addToFirstLog(`The password ${password} is correct. It has more than ${minimumTimes} "${letter}" and less than ${maximumTimes} `)
         validPasswordsFirst++;
-        document.querySelector(".valid-passwords").innerText = `There is ${validPasswordsFirst} valid passwords in total.`;
+        printValidPasswords("one", validPasswordsFirst)
     }
     else{
         addToFirstLog(`The password ${password} is not correct.`)
@@ -30,12 +34,18 @@ function checkValidPasswordFirstPart(minimumTimes, maximumTimes, letter, passwor
 function checkValidPasswordSecondPart(firstIndex, secondIndex, letter, password){
     if(password[firstIndex-1] === letter && password[secondIndex-1] === letter){
         addToSecondLog(`The password ${password} is correct. It has on position ${firstIndex} the letter "${letter}" and also on position ${secondIndex}`);
+        validPasswordsSecond ++;
+        printValidPasswords("two", validPasswordsSecond);
     }
     else if(password[firstIndex-1] === letter){
         addToSecondLog(`The password ${password} is correct. It has on position ${firstIndex} the letter "${letter}"`);
+        validPasswordsSecond ++;
+        printValidPasswords("two", validPasswordsSecond);
     }
     else if(password[secondIndex-1] === letter){
         addToSecondLog(`The password ${password} is correct. It has on position ${secondIndex} the letter "${letter}"`);
+        validPasswordsSecond ++;
+        printValidPasswords("two", validPasswordsSecond);
     }
     else{
         addToSecondLog(`The password ${password} is not correct.`)
